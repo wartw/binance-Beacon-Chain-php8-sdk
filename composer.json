@@ -8,10 +8,10 @@
     "require": {
         "guzzlehttp/guzzle": "~6.0",
         "graze/guzzle-jsonrpc": "^3.2",
-        "bitwasp/buffertools": "^0.5.7",
-        "google/protobuf": "^3.11",
-        "brick/math": "^0.8.14",
-        "bitwasp/bitcoin": "^1.0",
-        "ramsey/uuid": "^4.0"
+        ""bitwasp/buffertools": "^0.5.7",
+        "google/protobuf": "dev-master",
+        "protonlabs/bitcoin": "1.0.x-dev",
+        "ramsey/uuid": "5.x-dev",
+        "blackrabbit944/guzzle-jsonrpc": "dev-master"
     }
 }
