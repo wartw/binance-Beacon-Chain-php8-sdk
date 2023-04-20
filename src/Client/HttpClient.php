@@ -9,7 +9,6 @@ class HttpClient {
     private $server;
     private $newserver;
     private $serverjsonrpc;
-    
     function __construct($network) {
         if ($network == "mainnet"){
             $arr = array('https://dex.binance.org', 'https://dex-atlantic.binance.org', 'https://dex-asiapacific.binance.org', 'https://dex-european.binance.org');
@@ -63,6 +62,57 @@ class HttpClient {
         $client = new GuzzleHttp\Client();
         
         $response = $client->getSync($this->server.$endpoint)->wait(function($results){
+            return $results;
+        });
+        
+        $body = $response->getBody();
+        return json_decode((string) $body);
+    }
+    
+    // asyncnew function
+    function GetAsyncnew($endpoint){
+
+        $client = new GuzzleHttp\Client();
+        
+        $response = $client->getAsync($this->newserver.$endpoint)->wait(function($results){
+            return $results;
+        });
+        
+        $body = $response->getBody();
+        return json_decode((string) $body);
+    }
+
+    // syncnew function
+    function GetSyncnew($endpoint){
+
+        $client = new GuzzleHttp\Client();
+        
+        $response = $client->getSync($this->newserver.$endpoint)->wait(function($results){
+            return $results;
+        });
+        
+        $body = $response->getBody();
+        return json_decode((string) $body);
+    }
+    
+    // async function
+    function GetAsyncjsonrpc($endpoint){
+
+        $client = new GuzzleHttp\Client();
+        
+        $response = $client->getAsync($this->serverjsonrpc.$endpoint)->wait(function($results){
+            return $results;
+        });
+        $body = $response->getBody();
+        return json_decode((string) $body);
+    }
+
+    // sync function
+    function GetSyncjsonrpc($endpoint){
+
+        $client = new GuzzleHttp\Client();
+        
+        $response = $client->getSync($this->serverjsonrpc.$endpoint)->wait(function($results){
             return $results;
         });
         
