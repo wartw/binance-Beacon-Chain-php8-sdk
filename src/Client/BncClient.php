@@ -39,8 +39,8 @@ class BncClient {
             'getSwaps' => "/api/v1/atomic-swaps",
             'getOpenOrders' => "/api/v1/orders/open",
             'getDepth' => "/api/v1/depth",
-            'getTransactions' => "/api/v1/transactions",
-            'getTx' => "/api/v1/tx");
+            'getTransactions' => "/api/v1/txs",
+            'getTx' => "/api/v1/txs");
     }
     
 
