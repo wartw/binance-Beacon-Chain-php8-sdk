@@ -6,24 +6,22 @@ This repository contains the PHP-SDK to interact with [Binance DEX](http://binan
 
 At the moment, you will have to clone the repo and include it in your project. In the future, it will be available through composer.
 
-The SDK relies on [secp256k1-php](https://github.com/Bit-Wasp/secp256k1-php). There is currently no easy method to install secp256k1-php extension, you will need compile it yourself.
+The SDK relies on [secp256k1-php8](https://github.com/wartw/secp256k1-php8). There is currently no easy method to install secp256k1-php extension, you will need compile it yourself.
 
 ### To Install:
 
 libsecp256k1:
 
-    git clone git@github.com:bitcoin-core/secp256k1 && \
+    git clone https://github.com/bitcoin-core/secp256k1.git && \
     cd secp256k1 &&                                    \
     ./autogen.sh &&                                    \
     ./configure --enable-experimental --enable-module-{ecdh,recovery} && \
      make &&                                           \
      sudo make install &&                              \
      cd ../
-
-
 secp256k1-php:
 
-    git clone git@github.com:Bit-Wasp/secp256k1-php && \
+    git clone https://github.com/wartw/secp256k1-php.git && \
     cd secp256k1-php/secp256k1 &&                      \
     phpize &&                                          \ 
     ./configure --with-secp256k1 &&                    \  
